@@ -12,6 +12,10 @@ public final class Segment {
     private final LocalDateTime arrivalDate;
 
     public Segment(LocalDateTime departureDate, LocalDateTime arrivalDate) {
+        if (departureDate == null || arrivalDate == null) {
+            throw new IllegalArgumentException();
+        }
+
         this.departureDate = departureDate;
         this.arrivalDate = arrivalDate;
     }

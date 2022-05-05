@@ -8,6 +8,10 @@ public final class Flight {
     private final List<Segment> segments;
 
     public Flight(List<Segment> segments) {
+        if (segments == null) {
+            throw new IllegalArgumentException();
+        }
+
         this.segments = Collections.unmodifiableList(segments);
     }
 
